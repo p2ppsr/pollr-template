@@ -1,5 +1,5 @@
 import { AdmittanceInstructions, TopicManager } from '@bsv/overlay'
-import docs from './TemplateTopicDocs.js'
+import docs from './TemplateTopicDocs.md.js'
 
 /**
  * Template for a Topic Manager that can be modified for your specific use-case.
