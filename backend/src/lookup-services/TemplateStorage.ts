@@ -13,13 +13,6 @@ export class TemplateStorage {
     this.records = db.collection<TemplateRecord>('template record')
   }
 
-  /* Ensures a text index exists for the `message` field, enabling efficient searches.
-   * The index is named `MessageTextIndex`.
-   */
-  private async createSearchableIndex(): Promise<void> {
-    await this.records.createIndex({ message: 'text' }, { name: 'MessageTextIndex' })
-  }
-
   /**
    * Stores a new record in the database.
    * @param {string} txid - The transaction ID associated with this record
