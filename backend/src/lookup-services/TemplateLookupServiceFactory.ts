@@ -55,8 +55,25 @@ export class TemplateLookupService implements LookupService {
    * @returns A promise that resolves to a lookup answer or formula
    */
   async lookup(question: LookupQuestion): Promise<LookupAnswer | LookupFormula> {
-    throw Error('TODO implement')
-  }
+      const query = question.query
+
+      // Validate query presence
+      if (!query) {
+        throw new Error('A valid query must be provided!');
+      }
+
+      // Validate service
+      if (question.service !== 'ls_template') {
+        throw new Error('Lookup service not supported!');
+      }
+
+      // Handle specific queries
+      if (query === 'findAll') {
+        return await this.storage.findAll();
+      }  
+
+      throw new Error('Unknown query type');
+    }
 
   /** Overlay docs. */
   async getDocumentation(): Promise<string> {
