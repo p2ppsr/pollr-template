@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "@bsv/cars-cli": "^1.2.4",
-    "@bsv/lars": "^1.5.0"
+    "@bsv/lars": "^1.5.1"
   }
 }
