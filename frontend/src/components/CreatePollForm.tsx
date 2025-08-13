@@ -1,6 +1,6 @@
 import "./PollForm.css"
 import React, { useState } from "react"
-import { submitCreatePolls } from "../utils/PollrActions"
+import { submitCreatePolls } from "../utils/PollActions"
 import { Option } from "../types/types"
 import { styled } from "@mui/system"
 import { LinearProgress } from "@mui/material"

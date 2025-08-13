@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import PollsList from "./PollsList"
 import { Poll } from "../types/types"
-import { getClosedPolls } from "../utils/PollrActions"
+import { getClosedPolls } from "../utils/PollActions"
 import { LinearProgress } from "@mui/material"
 import { styled } from "@mui/system"
 

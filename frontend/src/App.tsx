@@ -33,10 +33,10 @@ function App() {
   return (
 
     <Router>
-      <NoMncModal appName={'Pollr'} open={MNCmissing} onClose={() => setMNCMissing(false)} />
+      <NoMncModal appName={'Polls!'} open={MNCmissing} onClose={() => setMNCMissing(false)} />
       <Container maxWidth="sm" style={{ marginTop: '2em', paddingBottom: '80px' }}>
         <Typography variant="h4" component="h1" gutterBottom align="center">
-          Pollr
+          Polls!
         </Typography>
 
         <Box sx={{ margin: '2em 0' }}>
@@ -81,12 +81,6 @@ function App() {
         textAlign: 'center',
         padding: '10px 0'
       }}>
-        <Typography variant="body2" color="textSecondary">
-          Visit the code on{' '}
-          <a href="https://github.com/p2ppsr/Pollr" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-        </Typography>
       </footer>
     </Router>
   )

@@ -59,7 +59,6 @@ export async function submitVote({
 
   // TODO 4: Create a vote token locking script:
   //   - PD = new PushDrop(wallet)
-  //   - script = await PD.lock([fields], [2,'testpollr'], '1', poll.key)
   //     (owner = poll.key so the poll owner can close/aggregate votes later)
 
   // TODO 5: Create the action to mint the vote token:
@@ -68,7 +67,6 @@ export async function submitVote({
 
   // TODO 6: Broadcast:
   //   - tx = Transaction.fromAtomicBEEF(action.tx!)
-  //   - broadcaster (topic 'tm_pollr', networkPreset as above)
   //   - await broadcaster.broadcast(tx); throw on failure
 
   throw new Error('Not implemented: submitVote')
@@ -77,7 +75,6 @@ export async function submitVote({
 // ------------------------- Close Poll --------------------------
 export async function closePoll({ pollId }: { pollId: string }) {
   // TODO 1: Query all vote tokens for this poll:
-  //   - question: { query: { type:'allvotesfor', txid: pollId }, service:'ls_pollr' }
   //   - resolver = new LookupResolver({ networkPreset: local-or-network })
   //   - lookupResult = await resolver.query(question); assert type === 'output-list'
 
@@ -103,7 +100,6 @@ export async function closePoll({ pollId }: { pollId: string }) {
   //   - data = writer.toArray()
 
   // TODO 6: Build closing token locking script:
-  //   - closeScript = await new PushDrop(wallet).lock([data], [2,'testpollr'], '1', 'self')
 
   // TODO 7: Prepare inputs (merge BEEF for signing):
   //   - inputs[0] = open token outpoint (.0), unlockingScriptLength ~ 74
@@ -116,11 +112,10 @@ export async function closePoll({ pollId }: { pollId: string }) {
 
   // TODO 9: Sign inputs:
   //   - tx = Transaction.fromAtomicBEEF(signable.tx!)
-  //   - spends[0]: PushDrop.unlock([2,'testpollr'], '1', 'self').sign(tx, 0)
   //   - for each vote input i: unlock with that vote’s key from the decoded vote row; sign(tx, i)
   //   - wallet.signAction({ reference, spends })
 
-  // TODO 10: Broadcast finalized tx via TopicBroadcaster (topic 'tm_pollr').
+  // TODO 10: Broadcast finalized tx via TopicBroadcaster
 
   throw new Error('Not implemented: closePoll')
 }
@@ -136,7 +131,7 @@ export async function fetchAllOpenPolls(): Promise<Array<{
   status: 'open'
   optionstype: string
 }>> {
-  // TODO 1: Query { type:'allpolls', status:'open' } from service 'ls_pollr' via LookupResolver.
+  // TODO 1: Query { type:'allpolls', status:'open' } 
 
   // TODO 2: For each output:
   //   - tx = Transaction.fromBEEF(beef)

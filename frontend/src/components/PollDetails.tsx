@@ -9,7 +9,7 @@ import {
   getPollResults,
   submitVote,
   closePoll,
-} from "../utils/PollrActions"
+} from "../utils/PollActions"
 import { Img } from "@bsv/uhrp-react"
 import { WalletClient } from '@bsv/sdk'
 
